@@ -14,20 +14,10 @@ struct ContentView: View {
     var body: some View {
          NavigationView {
              List{
-                 ForEach(expenses.items) { item in
-                     if item.isPersonal {
-                         HStack{
-                             VStack(alignment: .leading){
-                                 Text(item.name)
-                                     .modify(for: item.amount)
-                                 Text(item.type)
-                             }
-                             Spacer()
-                             
-                             Text(item.amount, format:.currency(code: "USD"))
-                         }
-                     }else {
-                         Section{
+                 Section{
+                     
+                     ForEach(expenses.items) { item in
+                         if item.isPersonal {
                              HStack{
                                  VStack(alignment: .leading){
                                      Text(item.name)
@@ -38,14 +28,35 @@ struct ContentView: View {
                                  
                                  Text(item.amount, format:.currency(code: "USD"))
                              }
-                         } header: {
-                             Text("Business")
+                         } else {
                          }
                          
                      }
+                     .onDelete(perform: removeItems)
+                 }header: {
+                     Text("Personal")
                  }
-                .onDelete(perform: removeItems)
-                 
+                 Section{
+                     
+                     ForEach(expenses.items) { item in
+                         if !item.isPersonal {
+                             HStack{
+                                 VStack(alignment: .leading){
+                                     Text(item.name)
+                                         .modify(for: item.amount)
+                                     Text(item.type)
+                                 }
+                                 Spacer()
+                                 
+                                 Text(item.amount, format:.currency(code: "USD"))
+                             }
+                             
+                         }
+                     }
+                     .onDelete(perform: removeItems)
+                 }header: {
+                     Text("Business")
+                 }
              }
              .navigationTitle("iExpense")
              .toolbar {
