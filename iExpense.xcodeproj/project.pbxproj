@@ -14,6 +14,7 @@
 		E0A2B8972AB36A5200C23195 /* Expenseitem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A2B8962AB36A5200C23195 /* Expenseitem.swift */; };
 		E0A2B8992AB36BA200C23195 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A2B8982AB36BA200C23195 /* Expenses.swift */; };
 		E0A2B89B2AB4C19600C23195 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A2B89A2AB4C19600C23195 /* AddView.swift */; };
+		E0A2B89D2AB65FC000C23195 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A2B89C2AB65FC000C23195 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		E0A2B8962AB36A5200C23195 /* Expenseitem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenseitem.swift; sourceTree = "<group>"; };
 		E0A2B8982AB36BA200C23195 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
 		E0A2B89A2AB4C19600C23195 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		E0A2B89C2AB65FC000C23195 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,7 @@
 		E0A2B87C2AB31C5700C23195 = {
 			isa = PBXGroup;
 			children = (
+				E0A2B89C2AB65FC000C23195 /* Extension.swift */,
 				E0A2B8872AB31C5700C23195 /* iExpense */,
 				E0A2B8862AB31C5700C23195 /* Products */,
 			);
@@ -149,6 +152,7 @@
 				E0A2B8992AB36BA200C23195 /* Expenses.swift in Sources */,
 				E0A2B8972AB36A5200C23195 /* Expenseitem.swift in Sources */,
 				E0A2B89B2AB4C19600C23195 /* AddView.swift in Sources */,
+				E0A2B89D2AB65FC000C23195 /* Extension.swift in Sources */,
 				E0A2B88B2AB31C5700C23195 /* ContentView.swift in Sources */,
 				E0A2B8892AB31C5700C23195 /* iExpenseApp.swift in Sources */,
 			);

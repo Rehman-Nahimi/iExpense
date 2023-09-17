@@ -13,5 +13,6 @@ struct ExpenseItem: Identifiable, Codable{
     let type : String
     let amount : Double
     
+    var isPersonal : Bool{ type == "Personal"}
     
 }

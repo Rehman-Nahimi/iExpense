@@ -10,23 +10,42 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var expenses = Expenses()
     @State private var showingAddExpense = false
-    
+   
     var body: some View {
          NavigationView {
              List{
                  ForEach(expenses.items) { item in
-                     HStack{
-                         VStack(alignment: .leading){
-                             Text(item.name)
-                                 .font(.headline)
-                             Text(item.type)
+                     if item.isPersonal {
+                         HStack{
+                             VStack(alignment: .leading){
+                                 Text(item.name)
+                                     .modify(for: item.amount)
+                                 Text(item.type)
+                             }
+                             Spacer()
+                             
+                             Text(item.amount, format:.currency(code: "USD"))
                          }
-                         Spacer()
+                     }else {
+                         Section{
+                             HStack{
+                                 VStack(alignment: .leading){
+                                     Text(item.name)
+                                         .modify(for: item.amount)
+                                     Text(item.type)
+                                 }
+                                 Spacer()
+                                 
+                                 Text(item.amount, format:.currency(code: "USD"))
+                             }
+                         } header: {
+                             Text("Business")
+                         }
                          
-                         Text(item.amount, format:.currency(code: "USD"))
                      }
                  }
-                 .onDelete(perform: removeItems)
+                .onDelete(perform: removeItems)
+                 
              }
              .navigationTitle("iExpense")
              .toolbar {
